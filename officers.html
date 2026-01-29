@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officers - IEEE Cal Poly SLO</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;700;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        nav a:hover {
+            background: rgba(0, 0, 0, 0.087);
+            padding: 8px 15px;
+            margin: -8px -15px; /* Keeps the text from jumping when padding is added */
+            border-radius: 4px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #c4c9c1;
+            /* Allow the page to grow and scroll */
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto; 
+        }
+
+        /* BACKGROUND BLOBS - Set to 'fixed' so they stay while you scroll */
+        .background-blobs {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.8;
+        }
+
+        .blob-1 {
+            width: 700px; height: 700px;
+            background: #39843f;
+            top: -100px; left: -100px;
+        }
+
+        .blob-2 {
+            width: 800px; height: 800px;
+            background: #2d6534;
+            bottom: -150px; right: -100px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+        }
+
+        /* This makes the logo area a clickable link */
+        .logo-link {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-weight: 900;
+            font-size: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+            filter: brightness(0) invert(1);
+        }
+
+        nav ul { display: flex; list-style: none; gap: 40px; }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+            padding-bottom: 4px;
+        }
+
+        /* OFFICERS SECTION */
+        .officers-section {
+            padding: 40px 20px 100px; /* Extra bottom padding so cards aren't cut off */
+            text-align: center;
+        }
+
+        .officers-header h2 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        .officers-header .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 60px;
+        }
+
+        .officers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .officer-card {
+            background-color: #5b8054;
+            width: 260px;
+            min-height: 360px;
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .officer-img-wrapper {
+            width: 100%;
+            height: 260px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #4a6341;
+        }
+
+        .officer-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .officer-info h3 {
+            font-weight: 900;
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .officer-info p {
+            font-size: 14px;
+            color: #000;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
+            header { padding: 20px; }
+            .officers-header h2 { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <!-- Clickable logo that links to home -->
+        <a href="index.html" class="logo-link">
+            <img src="actual_logo.png" alt="IEEE Logo" class="logo-img">
+            IEEE
+        </a>
+        <nav>
+            <ul>
+                <!-- HOME link removed from menu as requested -->
+                <li><a href="officers.html">OFFICERS</a></li>
+                <li><a href="workshop.html">WORKSHOP</a></li>
+                <li><a href="#">SPONSOR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="officers-section">
+        <div class="officers-header">
+            <h2>Meet the 25 – 26 Officers</h2>
+            <p class="subtitle">Officer application for 2026 – 2027 school year will open up in spring quarter.</p>
+        </div>
+
+        <div class="officers-container">
+            <!-- Add as many of these cards as you need! -->
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Ivan Nieto</h3>
+                    <p>President</p>
+                </div>
+            </div>
+
+            <!-- Repeat placeholders -->
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Preston Trager</h3>
+                    <p>Vice President</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Joshua Kamel</h3>
+                    <p>Secretary</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Riley Blach</h3>
+                    <p>Treasurer</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Sofia Salecedo</h3>
+                    <p>Membership Coordinator</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Sera Sasaki</h3>
+                    <p>Safety Officer & Parts Coordinator</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Colin Lucker</h3>
+                    <p>Parts Coordinator</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Francine Canal</h3>
+                    <p>Workshop Coordinator</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Issac Becker</h3>
+                    <p>Workshop Coordinator</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>David Xiao</h3>
+                    <p>Corporate Relations</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Hunter Pinkstaff</h3>
+                    <p>Outreach Coordinator</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Mark Negus</h3>
+                    <p>Sponsorship Officer</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Logan Chook</h3>
+                    <p>Marketing Chair</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Danila Gorkov</h3>
+                    <p>Transfer Representative</p>
+                </div>
+            </div>
+            <div class="officer-card">
+                <div class="officer-img-wrapper">
+                    <img src="placeholder.jpg" alt="John Doe">
+                </div>
+                <div class="officer-info">
+                    <h3>Lucas Poindexter</h3>
+                    <p>Freshmen Representative</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

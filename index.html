@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Cal Poly SLO</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;700;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #c4c9c1; /* The master background color */
+            color: white;
+            overflow-x: hidden; 
+            position: relative;
+        }
+
+        /* 2. THE CONTINUOUS BACKGROUND LAYER */
+        /* This container sits behind EVERYTHING on the page */
+        .page-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Puts it behind text/images */
+            pointer-events: none; /* Allows you to click things through the blobs */
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%; /* Keeps it a perfect circle */
+            filter: blur(80px);
+            opacity: 0.8;
+        }
+
+        /* Top Left Blob - stays in Hero area */
+        .blob-1 {
+            width: 700px; 
+            height: 700px;
+            background: #39843f;
+            top: -150px; 
+            left: -150px;
+        }
+
+        /* Middle Right Blob - Bridges the transition */
+        .blob-2 {
+            width: 850px; 
+            height: 850px;
+            background: #2d6534;
+            /* Positioned roughly at the "fold" between page 1 and 2 */
+            top: 55vh; 
+            right: -200px;
+        }
+
+        /* 3. HERO SECTION */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background: transparent; /* Allows background blobs to show through */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 2rem;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img { height: 40px; margin-right: 10px; }
+
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+            padding-bottom: 4px;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 { font-size: 9rem; font-weight: 900; line-height: 1; }
+        .sub-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .join-btn {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 12px 35px;
+            font-family: 'IBM Plex Mono', monospace;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .join-btn:hover { background: white; color: #4a6341; }
+
+        .hero-footer { padding: 40px 60px; text-align: right; }
+        .footer-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* 4. ABOUT SECTION */
+        .about-section {
+            background-color: transparent; /* No solid color breaking the flow */
+            padding: 150px 60px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1300px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .about-text { flex: 1; color: #1a1a1a; }
+        .about-text h2 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .about-image { flex: 1; }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 900px) {
+            .about-container { flex-direction: column; }
+            h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL BACKGROUND (The blobs exist here independently) -->
+    <div class="page-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <section class="hero">
+        <header>
+            <div class="logo">
+                <img src="actual_logo.png" alt="IEEE Logo" class="logo-img" style="filter: brightness(0) invert(1);">
+                IEEE
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="officers.html">OFFICERS</a></li>
+                    <li><a href="workshop.html">WORKSHOP</a></li>
+                    <li><a href="#">SPONSOR</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>IEEE</h1>
+            <div class="sub-heading">CAL POLY SLO</div>
+            <a href="https://discord.gg/dCNhWQeYMX" class="join-btn">JOIN NOW!</a>
+        </main>
+
+        <div class="hero-footer">
+            <p class="footer-text">THE LARGEST EE CLUB ON CAMPUS</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    IEEE at Cal Poly SLO is the student branch of the global Institute of 
+                    Electrical and Electronics Engineers. We support professional, 
+                    academic, and social growth through industry talks, skill-building 
+                    workshops, and community events that enhance the engineering 
+                    experience at Cal Poly.
+                </p>
+                <p>
+                    Each year, we run hands-on technical projects led by experienced 
+                    student mentors, giving members the chance to build practical skills, 
+                    explore new technologies, and tackle real engineering challenges. 
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="about_me.jpg" alt="IEEE Cal Poly SLO Team">
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+17.4s

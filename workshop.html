@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops - IEEE Cal Poly SLO</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* 1. SHARED STYLES (Consistency across all pages) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scrollbar-gutter: stable; }
+
+        nav a:hover {
+            background: rgba(0, 0, 0, 0.087);
+            padding: 8px 15px;
+            margin: -8px -15px; /* Keeps the text from jumping when padding is added */
+            border-radius: 4px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #c4c9c1;
+            color: black;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .background-blobs {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.8;
+        }
+
+        .blob-1 {
+            width: 700px; height: 700px;
+            background: #39843f;
+            top: -100px; left: -100px;
+        }
+
+        .blob-2 {
+            width: 800px; height: 800px;
+            background: #2d6534;
+            bottom: -150px; right: -100px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-weight: 900;
+            font-size: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+            filter: brightness(0) invert(1);
+        }
+
+        nav ul { display: flex; list-style: none; gap: 40px; }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+            padding-bottom: 4px;
+        }
+
+        /* 2. WORKSHOP CONTENT STYLES - Updated for wide span */
+        .workshop-wrapper {
+            max-width: 1200px; /* Increased to match Officers container */
+            margin: 0 auto;
+            padding: 40px 60px 100px; /* Side padding matches Header */
+        }
+
+        .main-headline {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 36px;
+            margin-bottom: 80px;
+        }
+
+        .workshop-header {
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: left; /* Aligns with logo/titles on other pages */
+        }
+
+        .workshop-header h2 {
+            font-size: 56px; /* Match 'Meet the Officers' size */
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .workshop-header p {
+            font-style: italic;
+            line-height: 1.6;
+            font-size: 19px;
+            opacity: 0.9;
+            max-width: 100%;
+        }
+
+        /* The Grid - Scaled up */
+        .workshop-content {
+            display: flex;
+            gap: 30px; /* More space between items */
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        /* Change both to flex: 1 so they split the screen exactly in half */
+        .workshop-image {
+            flex: 1; 
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: 380px; /* Reduced from 500px to make it rectangular */
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .slide-deck-box {
+            flex: 1;
+            background-color: #8e8886;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            height: 380px; /* Must match the image height exactly */
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .slide-deck-box h3 {
+            font-size: 38px; /* Slightly smaller font to fit the shorter rectangle better */
+            font-weight: 900;
+            color: black;
+            text-align: center;
+            padding: 30px;
+            line-height: 1.1;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 900px) {
+            .workshop-wrapper { padding: 40px 20px; }
+            header { padding: 30px 20px; }
+            .workshop-content { flex-direction: column; }
+            .workshop-header h2 { font-size: 36px; }
+            .slide-deck-box, .workshop-image img { height: 300px; }
+            .slide-deck-box h3 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="actual_logo.png" alt="IEEE Logo" class="logo-img">
+            IEEE
+        </a>
+        <nav>
+            <ul>
+                <li><a href="officers.html">OFFICERS</a></li>
+                <li><a href="workshops.html">WORKSHOP</a></li>
+                <li><a href="#">SPONSOR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="workshop-wrapper">
+
+        <div class="workshop-header">
+            <h2>Breathalyzer Workshop (Fall 25')</h2>
+            <p>
+                New to electronics? In this hands-on breathalyzer workshop, you'll learn the basics by building a simple device using Arduino 
+                and sensors. We'll cover how circuits work, how a sensor detects alcohol, and how code and hardware work together. You'll get 
+                experience wiring, light soldering, and testing your project—no prior experience needed. This workshop pairs well with Cal Poly 
+                SLO classes like EE 112, EE 151, and CPE 133.
+            </p>
+        </div>
+
+        <div class="workshop-content">
+            <!-- Left Side: Image -->
+            <div class="workshop-image">
+                <img src="breathalyzer.jpeg" alt="Workshop in progress">
+            </div>
+
+            <!-- Right Side: Slide Deck Link -->
+            <a href="YOUR_LINK_HERE" class="slide-deck-box">
+                <h3>Slide Deck to Workshop</h3>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

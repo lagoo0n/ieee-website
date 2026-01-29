@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@900&family=Playfair+Display&display=swap');
+
+.hero-content h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900; /* Extra Thick */
+  font-size: 120px;
+  margin: 0;
+  letter-spacing: -2px; /* Tighter spacing for that modern look */
+  color: white;
+}
+
+.hero-content h2 {
+  font-family: 'Playfair Display', serif; /* Elegant Serif font */
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-style: italic; /* Optional: adds to the serif look */
+  margin: 10px 0 40px;
+  color: white;
+}
+
+/* Update your .nav a, .hero-btn, and .hero-footer-text to use this font */
+.nav a, .hero-btn, .hero-footer-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Specific fix for the nav lines */
+.nav a {
+  border-bottom: 1px dashed rgba(255,255,255,0.4);
+  padding-bottom: 2px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.nav a {
+  margin-left: 50px; /* Increase this to spread the links out more */
+}
+
+.about-section {
+    background-color: #d7d8c8; /* Matching the light grey background */
+    padding: 100px 60px;       /* Top/Bottom and Left/Right padding */
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;      /* Vertically centers the text and image */
+    gap: 80px;                /* Space between the text and image */
+}
+
+.about-text {
+    flex: 1;                  /* Takes up half the space */
+    color: #1a1a1a;           /* Dark text for readability */
+}
+
+.about-text h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;          /* Large, bold heading */
+    font-weight: 900;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+}
+
+.about-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;         /* Adds space between lines of text */
+    margin-bottom: 25px;
+    opacity: 0.8;             /* Matches the slightly softer look of the paragraph */
+}
+
+.about-image {
+    flex: 1;                  /* Takes up the other half of the space */
+}
+
+.about-image img {
+    width: 100%;              /* Makes image fill its half of the container */
+    height: auto;
+    display: block;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Optional: subtle shadow style */
+}
+
+/* RESPONSIVE FIX: Stack them on top of each other on mobile */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+    }
+    
+    .about-text h2 {
+        font-size: 40px;
+    }
+}
